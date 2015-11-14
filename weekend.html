@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Crimmings Weekend Project One</title>
+  <link rel="stylesheet" href="weekend.css">
+
+
+</head>
+
+<body>
+
+<form>
+  <label for="firstname">First Name</label>
+  <input type="text" placeholder="First Name" name="firstname" required>
+  <br>
+  <label for="lastname">Last Name</label>
+  <input type="text" placeholder="Last Name" name="lastname" required>
+  <br>
+  <label for="employeenumber">Employee Number</label>
+  <input type ="number" placeholder="Employee Number" name="employeenumber" required>
+  <br>
+  <label for="title">Title</label>
+  <input type ="text" placeholder="Title" name="title" required>
+  <br>
+  <label for="lastreviewscore">Last Review Score</label>
+  <input type ="number" placeholder="Last Review Score" name="lastreviewscore" min ="1" max="5" required>
+  <br>
+  <label for="salary">Salary</label>
+  <input type ="number" placeholder="Salary" name="salary" required>
+  <br>
+  <label for="submit">Submit</label>
+  <input type="submit" name="submit"  value="Submit">
+</form>
+
+<div id="content">
+
+
+<!---This is where the list of most current emloyee information will go-->
+<!---Need to add the <ul>, <li>, <p>, via jquery amend functions.-->
+<!---Add 'remove' button next to each employee's information. Clicking 'remove' will remove that specific employee from DOM.-->
+<!---In Remove Score Section: implement color indicator based on review (1-5, 5 best, 1 worst-->
+
+</div>
+
+
+<script src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
+<script type="text/javascript" src="weekend.js"></script>
+</body>
+
+
+</html>
