@@ -64,38 +64,6 @@ $(document).ready(function() {
 
       }
 
-/*
-      if(elem.name !== "Salary"){
-        $p.text(elem.name + ": " + elem.value); //for each object adds this text in <p> in code
-        $('#content').append($p); //adds that new <p> with text into the DOM
-      } else if (elem.name !== "Last Review Score"){
-
-
-
-        $p.text(elem.name + ":" + elem.value);
-        $('#content').append($p).a
-
-
-        $p.text(elem.name + ":" +"$" + elem.value);
-        $('#content').append($p).append($btn);
-      }
-
-
-  /*
-  if(elem.name === "lastreviewscore" && elem.value === 1){
-      $(this).css('color', 'red');
-    } else if (elem.name === "lastreviewscore" && elem.value === 2){
-      $(this).css('color', 'blue');
-    } else if (elem.name === "lastreviewscore" && elem.value === 3){
-      $(this).css('color', 'green');
-    } else if (elem.name === "lastreviewscore" && elem.value === 4){
-      $(this).css('color', 'yellow');
-    } else if (elem.name === "lastreviewscore" && elem.value === 5){
-      $(this).css('color', 'brown');
-    };*/
-
-
-    //  $('#content p:last').append($btn)
 
 $('form')[0].reset();
 event.preventDefault();
