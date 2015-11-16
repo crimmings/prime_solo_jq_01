@@ -60,7 +60,7 @@ for (var j = 0; j < data.length; j++){//iterate through data.serializeArray
           break;
         case "salary":
           elem.name = "Salary";
-          $p.text(elem.name + ": " +  elem.value);
+          $p.text(elem.name + ": " +  "$" + elem.value);
           $($container).append($p);
           $($container).append($btn);
           break;
