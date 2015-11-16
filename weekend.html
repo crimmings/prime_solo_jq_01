@@ -1,54 +1,68 @@
 <!DOCTYPE html>
 <html>
+
 <head>
   <title>Crimmings Weekend Project One</title>
   <link rel="stylesheet" href="weekend.css">
-
-
 </head>
 
-<body>
-<head>
-<h1>Ideas Inc. Employee Roster</h1>
-</head>
+<main>
 
-<form>
-  <label for="firstname">First Name</label>
-  <input type="text" placeholder="First Name" name="firstname" required>
-  <br>
-  <label for="lastname">Last Name</label>
-  <input type="text" placeholder="Last Name" name="lastname" required>
-  <br>
-  <label for="employeenumber">Employee Number</label>
-  <input type ="number" placeholder="Employee Number" name="employeenumber" required>
-  <br>
-  <label for="title">Title</label>
-  <input type ="text" placeholder="Title" name="title" required>
-  <br>
-  <label for="lastreviewscore">Last Review Score</label>
-  <input type ="number" placeholder="Last Review Score" name="lastreviewscore" min ="1" max="5" required>
-  <br>
-  <label for="salary">Salary</label>
-  <input type ="number" placeholder="Salary" name="salary" required>
-  <br>
-  <label for="submit">Submit</label>
-  <input type="submit" name="submit"  value="Submit">
-</form>
+  <header>
+    <h1>Ideas Inc.</h1>
+    <h4>"If you want ideas, come to us. If you want them done, go somewhere else."</h4>
+  </header>
 
-<div id="content">
+  <section>
+    <p>Ideas aren't cheap. Time is money. To ensure that we continue to oversell our ideas and under serve their execution, it is important to be able to cut overhead as quickly as possible.</p>
+    <p>Adding employees into the form below will create a list of relevant information per employee. If you don't like what you see, simply click the corresponding "Bye Bye" button to send the employee on their way.</p>
+    <p>Unfortunately, you will not be able to save the employee list you create because the guy who came up with the idea naturally falls short on execution.</p>
+    <form>
+      <fieldset>
+        <legend>Add Employee</legend>
+        <label for="firstname">First</label>
+
+        <input type="text" placeholder="First Name" name="firstname" required>
+
+        <label for="lastname">Last</label>
+
+        <input type="text" placeholder="Last Name" name="lastname" required>
+
+        <label for="employeenumber">Work ID #</label>
+
+        <input type="number" placeholder="Employee Number" name="employeenumber"  required>
+
+        <label for="title">Title</label>
+
+        <input type="text" placeholder="Title" name="title" required>
+
+        <label for="lastreviewscore">Review Score</label>
+
+        <input type="number" placeholder="#1 - 5" name="lastreviewscore" min="1" max="5"  required>
+
+        <label for="salary">Salary</label>
+
+        <input type="number" placeholder="$" name="salary" required>
+
+        <label for="submit">Add</label>
+        <input type="submit" name="submit" value="Submit">
+
+      </fieldset>
+    </form>
+
+  </section>
+
+  <section id="employeelist">
 
 
-<!---This is where the list of most current emloyee information will go-->
-<!---Need to add the <ul>, <li>, <p>, via jquery amend functions.-->
-<!---Add 'remove' button next to each employee's information. Clicking 'remove' will remove that specific employee from DOM.-->
-<!---In Remove Score Section: implement color indicator based on review (1-5, 5 best, 1 worst-->
-
-</div>
+  </section>
 
 
-<script src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
-<script type="text/javascript" src="weekend.js"></script>
-</body>
+
+
+  <script src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
+  <script type="text/javascript" src="weekend.js"></script>
+</main>
 
 
 </html>

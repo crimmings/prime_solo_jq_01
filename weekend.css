@@ -1,20 +1,83 @@
-body {
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+main {
   font-family: Avenir, Helvetica, sans-serif;
   font-size: 18px;
-  width: 800px;
+  width: 1200px;
+  margin: 5px 5px 5px 5px;
 }
-
-
-p {
-  color: black;
-  padding: 5px 20px 5px 20px;
+header {
+margin: 5px 5px 5px 8px;
+padding: 5px 5px 5px 5px;
+width: 1200px;
 }
-
-li {
+section {
+  margin: 5px 5px 5px 5px;
+  padding: 5px 5px;
+  width: 1200px;
+}
+section p {
+  font-size: 80%
+  text-align: justify;
+  color: #404040;
+}
+fieldset {
+  width: 1200px;
+  font-size: 14px;
+  margin-top: 10px;
+  border: 1px solid #D0D0D0;
+}
+legend {
+  font-size: 16px;
   font-weight: bold;
-  padding: 5px 20px 5px 20px;
+  color: inherit;
+}
+label {
+  font-weight: bold;
+  background: white;
+  padding: 5px 15px;
+  color: inherit;
 }
 
-#content {
-  display:hidden;
+input[type=text] {
+  width: 6em;
+}
+
+#employeelist {
+  width: auto;
+
+}
+#employeelist span {
+  display: inline;
+  margin-top: 10px;
+  margin-right: auto;
+  margin-left: auto;
+  width: 1200px;
+  position: relative;
+  float: left;
+  text-align: justify;
+}
+#employeelist span p {
+  font: 10px/110%;
+  display: inline;
+  width: 1200px;
+  padding: 10px 10px 10px 10px;
+}
+
+#employeelist span p:nth-child(an+b) {
+  background-color: gray;
+
+}
+h1 {
+  font-size: 200%;
+  text-transform: uppercase;
+  padding: 5px 5px 0px 5px;
+}
+h4 {
+  color: #202020 ;
+  font-size: 100%;
+  font-style: italic;
 }

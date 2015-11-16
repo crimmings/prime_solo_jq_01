@@ -1,114 +1,90 @@
 $(document).ready(function() {
+var i = 0;//global variable to count <span's>added with new employee
+
+$('form').on('submit', function(event) {
+
+  data = $(this).serializeArray();
+  event.preventDefault();
+  console.log(data);
+
+var $container = $('<span>');
 
 
+for (var j = 0; j < data.length; j++){//iterate through data.serializeArray
 
-  $('form').on('submit', function(event) {
-
-
-
-
-  var  data = $(this).serializeArray(); // turns form data into object
-  /*  len = data.length,
-    dataObj = {};
-    $(data).each(function(i, field){
-      dataObj[field.name] = field.value;
-
-    });
-
-for (i=0; i<len; i++) {
-  dataObj[data[i].name] = data[i].value;
-console.log(data[i].value);
-};
-*/
-
-  data.forEach(function(elem) { //goes through content in object and assigns values
-      var $div = $('<div>');
-      var $p = $('<p>');
-      var $li = $('<li>');
-      var $ul = $('<ul>');
-      var $btn = $('<button>You Are Fired</button>');
+      var elem = data[j];
+      var $p =$('<p>');
+      var $btn = $('<button>Bye-Bye</button>');
 
 
 //switch statement to display elements, prob most inefficient way possible to do this
-      switch (elem.name) {
+   switch (elem.name) {
         case "firstname":
           elem.name = "First Name";
-          $li.text(elem.name + ":");
-          $p.text(elem.value);
-          $('#content').append($li);
-          $('#content').append($p);
+          $p.text(elem.name + ": " + elem.value);
+          $($container).append($p);
           break;
         case "lastname":
           elem.name = "Last Name";
-          $li.text(elem.name + ":");
-          $p.text(elem.value);
-          $('#content').append($li);
-          $('#content').append($p);
+          $p.text(elem.name + ": " +  elem.value);
+          $($container).append($p);
           break;
         case "employeenumber":
           elem.name = "Employee Number";
-          $li.text(elem.name + ":");
-          $p.text(elem.value);
-          $('#content').append($li);
-          $('#content').append($p);
+          $p.text(elem.name + ": " + elem.value);
+          $($container).append($p);
           break;
         case "title":
           elem.name = "Title";
-          $li.text(elem.name + ":");
-          $p.text(elem.value);
-          $('#content').append($li);
-          $('#content').append($p);
+          $p.text(elem.name + ": " + elem.value);
+          $($container).append($p);
           break;
         case "lastreviewscore":
           elem.name = "Last Review Score";
           if (elem.value === "5"){
-            $li.text(elem.name + ": ");
-            $p.text(elem.value).css('color', 'red');
-            $('#content').append($li);
-              $('#content').append($p);
+            $p.text(elem.name + ": " +  elem.value).css('color', 'pink');
+            $($container).append($p);
           } else if (elem.value === "4"){
-            $li.text(elem.name + ": ");
-            $p.text(elem.value).css('color', 'blue');
-            $('#content').append($li);
-            $('#content').append($p);
+            $p.text(elem.name + ": " +  elem.value).css('color', '#00FF00');
+           $($container).append($p);
           } else if (elem.value === "3"){
-            $li.text(elem.name + ": ");
-            $p.text(elem.value).css('color', 'green');
-            $('#content').append($li);
-            $('#content').append($p);
+            $p.text(elem.name + ": " +  elem.value).css('color', '#00FFFF');
+            $($container).append($p);
           } else if (elem.value === "2"){
-            $li.text(elem.name + ": ");
-            $p.text(elem.value).css('color', 'orange');
-            $('#content').append($li);
-            $('#content').append($p);
+            $p.text(elem.name + ": " +  elem.value).css('color', '#FF0000');
+            $($container).append($p);
           } else {
-            $li.text(elem.name + ": ");
-            $p.text(elem.value).css('color', 'yellow');
-            $('#content').append($li);
-            $('#content').append($p);
+            $p.text(elem.name + ": " +  elem.value).css('color', '#FF00FF');
+            $($container).append($p);
             }
           break;
         case "salary":
           elem.name = "Salary";
-          $li.text(elem.name + ": ");
-          $p.text("$" + elem.value);
-          $('#content').append($li);
-          $('#content').append($p).append($btn);
+          $p.text(elem.name + ": " +  elem.value);
+          $($container).append($p);
+          $($container).append($btn);
           break;
 
-      }
+
+      }//switch
+
+    } //for loop
+
+ $('form')[0].reset();
 
 
-$('form')[0].reset();
-event.preventDefault();
-
-
-})
-
-
-
-
-
-		});
-
+$($btn).on("click", function() {
+  $(this).parent().remove();
 });
+
+$container.appendTo('#employeelist');//attached to global i variable to assign unique ID to each new employee span
+$container.attr("id", 'elem' + i );//didn't figure out how to style and assign for an unpredictable number of employees
+i++;
+
+
+
+})//submit
+
+
+
+}) //doc ready
