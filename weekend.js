@@ -1,20 +1,66 @@
 $(document).ready(function() {
-var i = 0;//global variable to count <span's>added with new employee
+
+  var theTemplateScript = $('#employeescript').html();
+  var theTemplate = Handlebars.compile(theTemplateScript);
+
+  //var $p =$('<p>');
+  var $btn = $('<button>Bye-Bye</button>');
+
+//Employee constructor
+function Employee (firstName, lastName, employeeNum, title, lastReview, salary) {
+  this.firstName = firstName;
+  this.lastName = lastName;
+  this.employeeNum = employeeNum;
+  this.title = title;
+  this.lastReview = lastReview;
+  this.salary = salary;
+}
+
+// array that stores employee objects
+var dataArray = [];
+
+//handlebars
 
 $('form').on('submit', function(event) {
 
-  data = $(this).serializeArray();
   event.preventDefault();
+
+//serialize data from form
+  data = $(this).serializeArray();
   console.log(data);
 
+//create array of only value properties return from serialized array
+//forEach(): executes a provided function once per array element.
+
+/* data.forEach(function(elem){
+  dataArray.push(elem.value);
+  console.log(elem);
+  console.log(dataArray);
+});
+*/
+  //var elem = data[j];
+//array holds new instances of Employee objects assigning values from dataArray elements
+var employee = new Employee(data[0].value, data[1].value, data[2].value, data[3].value,
+                                              data[4].value, data[5].value);
+
+console.log(employee);
+
+//push employee objects in an array of employee objects
+dataArray.push(employee);
+
+var theData = {employee: dataArray};
+
+var compiledHTML = theTemplate(theData);
+
+
+$('#employeestable').append(compiledHTML);
+
+
+/*
 var $container = $('<span>');
 
 
 for (var j = 0; j < data.length; j++){//iterate through data.serializeArray
-
-      var elem = data[j];
-      var $p =$('<p>');
-      var $btn = $('<button>Bye-Bye</button>');
 
 
 //switch statement to display elements, prob most inefficient way possible to do this
@@ -69,6 +115,7 @@ for (var j = 0; j < data.length; j++){//iterate through data.serializeArray
       }//switch
 
     } //for loop
+*/
 
  $('form')[0].reset();
 
@@ -77,14 +124,10 @@ $($btn).on("click", function() {
   $(this).parent().remove();
 });
 
-$container.appendTo('#employeelist');//attached to global i variable to assign unique ID to each new employee span
-$container.attr("id", 'elem' + i );//didn't figure out how to style and assign for an unpredictable number of employees
-i++;
 
 
 
-})//submit
+});//submit
 
 
-
-}) //doc ready
+}); //doc ready

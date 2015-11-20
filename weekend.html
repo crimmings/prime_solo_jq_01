@@ -4,6 +4,9 @@
 <head>
   <title>Crimmings Weekend Project One</title>
   <link rel="stylesheet" href="weekend.css">
+  <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.4/handlebars.min.js"></script>
+  <script type="text/javascript" src="weekend.js"></script>
 </head>
 
 <main>
@@ -53,15 +56,29 @@
   </section>
 
   <section id="employeelist">
+    <table id="employeestable">
+      <script id="employeescript" type="text/x-handlebars-template">
+    {{#each employee}}
+    <tr>
+      <td>{{firstName}}</td>
+      <td>{{lastName}}</td>
+      <td>{{employeeNum}}</td>
+      <td>{{title}}</td>
+      <td>{{lastReview}}</td>
+      <td>{{salary}}</td>
+    </tr>
+    {{/each}}
 
-
+</script>
+</table>
   </section>
 
 
 
 
-  <script src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
-  <script type="text/javascript" src="weekend.js"></script>
+
+
+
 </main>
 
 
